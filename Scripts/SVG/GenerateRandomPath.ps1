@@ -1,4 +1,5 @@
-﻿Add-Type -Assembly System.Drawing
+﻿param ([String] $OutFile)
+Add-Type -Assembly System.Drawing
 
 $Width = 2048
 $Height = 2048
@@ -110,6 +111,4 @@ $p = GetWigglyPath
 $svg = $svg.Replace("[PATH]", $p) 
 
 
-$svg | Set-Content C:\temp\Test.svg
-
-#& C:\temp\Test.svg
+$svg | Set-Content $OutFile
